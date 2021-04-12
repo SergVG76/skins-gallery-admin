@@ -20,13 +20,13 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="list-group-item" *ngFor="let skin of skins; let i = index" [class.selected]="i == currentIndex"
+    <div class="grid-row" *ngFor="let skin of skins; let i = index" [class.selected]="i == currentIndex"
       (click)="setCurrentSkin(skin, i)">
       {{ skin.name }}
     </div>
   </div>
 
-  <div class="col-md-6">
+  <div class="status-bar">
     <div *ngIf="currentSkin">
       <span>
         <label><strong>Name: </strong>{{ currentSkin.name }}</label>
@@ -34,9 +34,9 @@
       <span>
         <label><strong>, ID: </strong>{{ currentSkin.id }}</label>
       </span>
-      <div>
-        <label><strong>Status:</strong></label>
-      </div>
+      <span>
+        <label><strong>, Status:</strong></label>
+      </span>
 
       <a class="badge badge-warning" routerLink="/skins/">
         Selected
