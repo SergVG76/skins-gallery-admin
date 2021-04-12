@@ -33,12 +33,14 @@ export class GridMainComponent implements OnInit {
   refresh(): void {
     this.readSkins();
     this.currentSkin = null;
+    confirm("refresh");
     this.currentIndex = -1;
   }
 
   setCurrentSkin(skin, index): void {
     this.currentSkin = skin;
     this.currentIndex = index;
+    //    confirm(this.currentSkin.id);
   }
 
   deleteAllskins(): void {
