@@ -8,28 +8,42 @@
         [(ngModel)]="name"
       />
       <button
-          class="btn btn-outline-secondary"
-          type="button"
-          (click)="searchByName()"
+        class="btn btn-outline-secondary"
+        type="button"
+        (click)="searchByName()"
       >
         Search
       </button>
-      <button class="m-4 btn btn-sm btn-danger" (click)="deleteAllskins()">
+      <!--button class="m-4 btn btn-sm btn-danger" (click)="deleteAllskins()">
         Delete All
-      </button>
+      </button-->
     </div>
   </div>
-  <div class="col-md-6">
-    <div class="grid-row" *ngFor="let skin of skins; let i = index" [class.selected]="i == currentIndex"
-      (click)="setCurrentSkin(skin, i)">
-      {{ skin.name }}
-    </div>
-  </div>
+
+  <table width="100%">
+    <tr class="grid-header">
+      <td>ID</td>
+      <td>Name</td>
+      <td>Link</td>
+      <td>Date</td>
+    </tr>
+    <tr
+      class="grid-row"
+      *ngFor="let skin of skins; let i = index"
+      [class.selected]="i == currentIndex"
+      (click)="setCurrentSkin(skin, i)"
+    >
+      <td>{{ skin.ID }}</td>
+      <td>{{ skin.SKIN_NAME }}</td>
+      <td>{{ skin.SKIN_LINK }}</td>
+      <td>{{ skin.LAST_DATE }}</td>
+    </tr>
+  </table>
 
   <div class="status-bar">
     <div *ngIf="currentSkin">
       <span>
-        <label><strong>Name: </strong>{{ currentSkin.name }}</label>
+        <label><strong>Name: </strong>{{ currentSkin.SKIN_NAME }}</label>
       </span>
       <span>
         <label><strong>, ID: </strong>{{ currentSkin.id }}</label>

@@ -3,10 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 //import "rxjs/add/operator/map";
 
-export interface Skin {
-  id: string;
-  name: string;
-}
+export interface Skin {}
 
 const url = "https://www.alphaskins.com/bcknd_acdb/skins_table.php";
 
@@ -38,7 +35,8 @@ export class DataService {
     return this.http.delete(url);
   }
 
-  searchByName(name): Observable<any> {
-    return this.http.get(`${url}?name=${name}`);
+  searchByName(name): Observable<Skin[]> {
+//    confirm(`${url}?name=${name}`);
+    return this.http.get<Skin[]>(`${url}?name=${name}`);
   }
 }

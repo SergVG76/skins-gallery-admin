@@ -1,20 +1,9 @@
-.grid-row {
-  padding: 2px;
-  padding-left: 6px;
-}
-
-.grid-row.selected {
-  background-color: rgb(94, 157, 252);
-  color: white;
-}
-
-.grid-row:active {
-  background-color: rgb(22, 115, 255);
-  color: white;
-}
-
 .status-bar {
   padding-top: 8px;
   margin-top: 12px;
-  background-color: rgba(190, 190, 190, 0.514);
 }
+
+.grid-row {
+  cursor: default;
+}
+

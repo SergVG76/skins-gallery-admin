@@ -40,7 +40,6 @@ export class GridMainComponent implements OnInit {
   setCurrentSkin(skin, index): void {
     this.currentSkin = skin;
     this.currentIndex = index;
-    //    confirm(this.currentSkin.id);
   }
 
   deleteAllskins(): void {
@@ -56,7 +55,7 @@ export class GridMainComponent implements OnInit {
   }
 
   searchByName(): void {
-    confirm("Search");
+    //    confirm("Search "+this.name);
     this.dService.searchByName(this.name).subscribe(
       skins => {
         this.skins = skins;
