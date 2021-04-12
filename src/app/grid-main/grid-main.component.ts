@@ -54,6 +54,7 @@ export class GridMainComponent implements OnInit {
   }
 
   searchByName(): void {
+    confirm("Search");
     this.dService.searchByName(this.name).subscribe(
       skins => {
         this.skins = skins;
